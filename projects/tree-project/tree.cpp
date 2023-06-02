@@ -19,22 +19,8 @@ void Tree::add_subtree(const Tree& subtree)
 
 int Tree::size() const
 {
-   if (root == nullptr) 
-   { 
-       return 0; 
-   }
-   else 
-   { 
-       return root->size(); 
-   }
-}
-
-void Tree::print() const
-{
-   if (root != nullptr) 
-   { 
-       root->print(); 
-   }
+   if (root == nullptr) { return 0; }
+   else { return root->size(); }
 }
 
 int Node::size() const
@@ -50,8 +36,16 @@ int Node::size() const
 void Node::print() const
 {
    std::cout << data << std::endl;
-   for (Node* child : children)
+   for (Node* np : children)
    {
-      child->print();
+      np->print();
+   }
+}
+
+void Tree::print() const
+{
+    if (root != nullptr)
+   {
+      root -> print();   
    }
 }
